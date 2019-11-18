@@ -6,7 +6,7 @@ TERMUX      = "/data/data/com.termux/files/usr/bin/"
 LINUX       = "/usr/bin/"
 DARKFLYEXEC = "fb"
 COMMAND = {
-    "termux":{1:"cd "+TERMUX+"fb",2:"python {}/{}".format(TERMUX,"fb/nilu.py")},
+    "termux":{1:"cd "+TERMUX+"fb",2:"python2 {}/{}".format(TERMUX,"fb/nilu.py")},
     "linux":{1:"cd "+LINUX+"DarkFly-2019.1",2:"python3 {}/{}".format(LINUX,"DarkFly-2019.1/main.py")}
 }
 
@@ -39,7 +39,7 @@ class Install:
         system("mv ../fb %s && chmod +x %s/%s && chmod 777 -R %s"%(TERMUX,TERMUX,DARKFLYEXEC,TERMUX+"/fb"))
         if not self.environmentExists(TERMUX+DARKFLYEXEC) or not self.environmentExists(TERMUX+"fb"):
             sys.exit("Install failed.")
-        sys.exit("[ ✓ ] Install Success, run: \"virus\"")
+        sys.exit("[ ✓ ] Install Success, run: \"fb\"")
         exect.close()
     
     def install(self):
